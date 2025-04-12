@@ -1,0 +1,14 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/gui.rpy", line 90: invalid syntax
+    "gui/main_menu.jpg" at Transform(zoom= 1.5)
+                         ^
+
+File "game/gui.rpy", line 91: invalid syntax
+    "gui/game_menu.jpg" at Transform(zoom= 1.5)
+                         ^
+
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Fri Apr 11 22:48:19 2025
