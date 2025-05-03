@@ -1,9 +1,11 @@
-﻿define sm = Character("Spider-Man")
-define t = Character("Teléfono")
-define im = Character("Iron-Man")
-define dv = Character("Duende Verde")
+define sm = Character("Spider-Man")
+define t = Character("Teléfono", color="#aaaaaaff")
+define im = Character("Iron-Man", color="#ff0000")
+define dv = Character("Duende Verde", color="#00ff00")
 define hg = Character("Hermano Gemelo")
-define n = Character("Narrador")
+define n = Character("Narrador", color="#ffffff")
+
+default tickets = False
 
 label start:
 
@@ -114,6 +116,20 @@ label mission:
 
             sm "Aunque el mundo explote, todo valió la pena..."
 
+            sm "No, no me tengo que rendir aún"
+
+            sm "¿Qué es esto?"
+
+            sm "¡Dos boletos para la película de Minecraft!"
+
+            sm "Tal vez me sirvan después"
+
+            $ tickets = True
+
+            $ renpy.movie_cutscene("spider-man_song.webm")
+
+            jump end
+
     return
 
 label end:
@@ -127,7 +143,7 @@ label end:
     scene black
     play sound "vine-boom.mp3"
 
-    dv ""
+    dv "..."
 
     scene green goblin plot twist
 
@@ -138,5 +154,25 @@ label end:
     scene black
 
     n "La historia continuara..."
+
+    if tickets == True:
+
+        jump secret_end
+
+    return
+
+label secret_end:
+
+    scene black
+
+    sm "¡La historia no ha terminado! Aún..."
+
+    sm "Vamos al cine con los boletos que encontré tirados"
+
+    hg "Ok"
+
+    $ renpy.movie_cutscene("chicken_jockey.webm")
+
+    sm "Ahora sí, para terminar, la historia continuará..."
 
     return
